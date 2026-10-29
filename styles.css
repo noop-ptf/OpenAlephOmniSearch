@@ -1,0 +1,273 @@
+.openaleph-source-box {
+    border: var(--border-width) solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    padding: var(--size-4-2) var(--size-4-3);
+    margin-bottom: var(--size-4-3);
+}
+
+.openaleph-spin svg {
+    animation: spin-rotation 0.8s linear infinite;
+}
+
+@keyframes spin-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.openaleph-instance-connection-valid svg {
+    color: var(--color-green);
+}
+
+.openaleph-instance-connection-invalid svg {
+    color: var(--color-red);
+}
+
+/* ── OpenAleph OmniSearch view ───────────────────────────────────────── */
+
+.openaleph-omnisearch {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4-3);
+}
+
+.openaleph-query-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4-2);
+}
+
+.openaleph-query-list:empty {
+    display: none;
+}
+
+/* ── Query group row ─────────────────────────────────────────────────── */
+
+.openaleph-query-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--size-2-2);
+}
+
+.openaleph-query-group .search-input-container {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+}
+
+.openaleph-query-group .openaleph-icon-button {
+    --icon-size: var(--icon-s);
+    --icon-stroke: var(--icon-s-stroke-width);
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-2-1);
+    height: var(--input-height);
+    min-width: var(--input-height);
+    padding: 0 var(--size-2-3);
+    border: none;
+    border-radius: var(--clickable-icon-radius);
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--icon-color);
+    cursor: var(--cursor);
+}
+
+.openaleph-query-group .openaleph-icon-button:hover {
+    background-color: var(--background-modifier-hover);
+    color: var(--icon-color-hover);
+}
+
+.openaleph-query-group .openaleph-icon-button.is-active {
+    background-color: var(--background-modifier-active-hover);
+    color: var(--icon-color-active);
+}
+
+.openaleph-query-group .openaleph-icon-button:focus-visible {
+    box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+}
+
+.openaleph-query-group .openaleph-delete-button:hover {
+    color: var(--text-error);
+}
+
+.openaleph-instance-count {
+    font-size: var(--font-ui-smaller);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    color: var(--text-muted);
+}
+
+.openaleph-instance-button.is-empty,
+.openaleph-instance-button.is-empty .openaleph-instance-count {
+    color: var(--text-warning);
+}
+
+/* ── Instance dropdown ───────────────────────────────────────────────── */
+
+.openaleph-instance-popover {
+    position: absolute;
+    top: calc(100% + var(--size-2-2));
+    left: 0;
+    right: 0;
+    z-index: var(--layer-menu);
+    padding: var(--size-2-3);
+    background-color: var(--background-secondary);
+    border: var(--border-width) solid var(--background-modifier-border-hover);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-s);
+    font-size: var(--font-ui-small);
+}
+
+.openaleph-instance-popover-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--size-4-2);
+    padding: var(--size-2-2) var(--size-4-2) var(--size-4-1);
+}
+
+.openaleph-instance-popover-title {
+    font-size: var(--font-ui-smaller);
+    font-weight: var(--font-semibold);
+    color: var(--text-muted);
+}
+
+.openaleph-instance-popover-empty {
+    padding: var(--size-4-1) var(--size-4-2) var(--size-4-2);
+    color: var(--text-muted);
+}
+
+.openaleph-instance-list {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(var(--size-4-12) * 5);
+    overflow-y: auto;
+}
+
+.openaleph-instance-option {
+    display: flex;
+    align-items: center;
+    gap: var(--size-4-2);
+    padding: var(--size-4-1) var(--size-4-2);
+    border-radius: var(--radius-s);
+    cursor: var(--cursor);
+}
+
+.openaleph-instance-option:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.openaleph-instance-option input[type='checkbox'] {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.openaleph-instance-option-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.openaleph-instance-option-name,
+.openaleph-instance-option-url {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.openaleph-instance-option-name {
+    color: var(--text-normal);
+}
+
+.openaleph-instance-option-url {
+    font-size: var(--font-ui-smaller);
+    color: var(--text-muted);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────── */
+
+.openaleph-link-button {
+    height: auto;
+    padding: var(--size-4-1);
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    font-size: var(--font-ui-smaller);
+    color: var(--text-accent);
+    cursor: var(--cursor);
+}
+
+.openaleph-link-button:hover {
+    background-color: transparent;
+    color: var(--text-accent-hover);
+    text-decoration: underline;
+}
+
+/* New query, Search and Clear all, stacked full-width under the queries. */
+.openaleph-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4-2);
+}
+
+.openaleph-action-button {
+    --icon-size: var(--icon-s);
+    --icon-stroke: var(--icon-s-stroke-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-2-3);
+    width: 100%;
+    height: var(--input-height);
+    border-radius: var(--button-radius);
+    font-size: var(--font-ui-small);
+    cursor: var(--cursor);
+}
+
+.openaleph-action-icon {
+    display: inline-flex;
+}
+
+/* Secondary: dashed outline, reads as "add a slot". */
+.openaleph-new-query {
+    border: var(--border-width) dashed var(--background-modifier-border);
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--text-muted);
+}
+
+.openaleph-new-query:hover {
+    border-color: var(--background-modifier-border-hover);
+    background-color: var(--background-modifier-hover);
+    color: var(--text-normal);
+}
+
+/* Primary: Obsidian's `mod-cta` supplies the accent fill and hover colour. */
+.openaleph-search-button {
+    font-weight: var(--font-semibold);
+}
+
+/* Quiet: plain text that warns on hover, since it discards every query. */
+.openaleph-clear-all {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--text-faint);
+}
+
+.openaleph-clear-all:hover {
+    background-color: rgba(var(--color-red-rgb), 0.1);
+    color: var(--text-error);
+}
+
+.openaleph-link-button:focus-visible,
+.openaleph-action-button:focus-visible {
+    box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+}

@@ -1,0 +1,9 @@
+{
+	"id": "openaleph-omnisearch",
+	"name": "OpenAleph OmniSearch",
+	"version": "1.0.0",
+	"minAppVersion": "1.13.0",
+	"description": "Run multiple searches across multiple OpenAleph instances",
+	"author": "noop",
+	"isDesktopOnly": false
+}

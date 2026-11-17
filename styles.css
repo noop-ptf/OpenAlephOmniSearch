@@ -271,3 +271,93 @@
 .openaleph-action-button:focus-visible {
     box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
 }
+
+/* sort */
+
+.openaleph-schema-count {
+    font-size: var(--font-ui-smaller);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}
+
+.openaleph-schema-count:empty {
+    display: none;
+}
+
+/* Some schemas are unticked: highlight that the query is filtered. */
+.openaleph-schema-button.is-filtered,
+.openaleph-schema-button.is-filtered .openaleph-schema-count {
+    color: var(--text-accent);
+}
+
+/* Nothing ticked: the query will be skipped, same warning as instances. */
+.openaleph-schema-button.is-empty,
+.openaleph-schema-button.is-empty .openaleph-schema-count {
+    color: var(--text-warning);
+}
+
+/* 66 schemas: let the list use more of the sidebar before scrolling. */
+.openaleph-schema-popover .openaleph-instance-list {
+    max-height: 50vh;
+}
+
+.openaleph-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4-4);
+}
+
+.openaleph-results-list:empty {
+    display: none;
+}
+
+.openaleph-results-query {
+    padding: 0 var(--size-4-2);
+    font-weight: var(--font-semibold);
+    color: var(--text-normal);
+    overflow-wrap: anywhere;
+}
+
+.openaleph-results-total {
+    font-size: var(--font-ui-smaller);
+    color: var(--text-muted);
+    padding: 0 var(--size-4-2) var(--size-4-2);
+}
+
+.openaleph-instance-name {
+    font-weight: var(--font-bold);
+    font-size: var(--font-ui-medium);
+    color: var(--text-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.openaleph-omnisearch-view .tree-item-icon.collapse-icon {
+    transition: transform 0.15s ease;
+}
+
+.openaleph-omnisearch-view .tree-item-icon.collapse-icon.is-collapsed {
+    transform: rotate(-90deg);
+}
+
+/* Stands in for the zero-size spacer OpenAlephSearch styled inline. */
+.openaleph-result-spacer {
+    width: 1px;
+    height: 0.1px;
+    margin-bottom: 0;
+}
+
+.openaleph-result-title {
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--size-4-1);
+}
+
+.openaleph-result-snippet {
+    font-size: var(--font-ui-small);
+    color: var(--text-muted);
+    margin-bottom: var(--size-4-2);
+}
+
+.openaleph-load-more {
+    margin: var(--size-4-2) var(--size-4-2) 0;
+}
